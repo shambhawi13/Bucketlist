@@ -1,0 +1,67 @@
+<div class="jumbotron jumbotron-fluid bgImg" >
+  <div class="container">
+    <h1 class="display-4">Bucketlist</h1>
+    <p class="lead"></p>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <form class="create-form" method="POST">
+            <h5 class="card-title">
+              <div class="form-group">
+                <label for="name">Title</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="What you wanna do?">
+              </div>
+
+              <div class="form-group">
+                <label for="desc">Notes</label>
+                <input type="text" class="form-control" name="desc" id="desc" placeholder="Notes to add">
+              </div>
+              <button class="btn btn-primary" type="submit">Add</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="list-group">
+        {{#each bucketlist}}
+        {{#unless completed}}
+        <a href="#" class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1" data-id="{{id}}">{{name}}</h5>
+          </div>
+          <p><small>created at {{created}}</small></p>
+          <p class="mb-1">{{description}}
+          </p>
+          <button type="button" data-id="{{id}}" id="done" class="btn btn-success">Done</button>
+        </a>
+        {{/unless}}
+        {{/each}}
+
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="list-group">
+        {{#each bucketlist}}
+        {{#if completed}}
+        <a href="#" class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{name}}</h5>
+          </div>
+          <p><small>created at {{created}}</small></p>
+          <p class="mb-1">{{description}}
+          </p>
+        </a>
+        {{/if}}
+        {{/each}}
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,4 +1,3 @@
-INSERT INTO bucketlist (name) VALUES ('Travel to Greece');
-INSERT INTO bucketlist (name) VALUES ('Try Middle Eastern cuisine');
-INSERT INTO bucketlist (name,completed) VALUES ('Travel to Crotia',true);
-
+INSERT INTO bucketlist (name,description) VALUES ('Travel to Greece','Its one in lifetime. Must visit!!');
+INSERT INTO bucketlist (name,description) VALUES ('Try Middle Eastern cuisine','Looks Yumm');
+INSERT INTO bucketlist (name,description,completed) VALUES ('Travel to Crotia','An awesome place with beautiful beaches',true);
