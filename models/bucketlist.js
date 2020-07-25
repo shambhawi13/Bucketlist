@@ -17,11 +17,11 @@ var bucketlist = {
         cb(res);
       });
     },
-    // delete: function(condition, cb) {
-    //   orm.delete("bucketlist", condition, function(res) {
-    //     cb(res);
-    //   });
-    // }
+    delete: function(condition, cb) {
+      orm.delete("bucketlist", condition, function(res) {
+        cb(res);
+      });
+    }
   };
   
   // Export the database functions for the controller 

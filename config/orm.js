@@ -70,7 +70,6 @@ var orm = {
       cb(result);
     });
   },
-  // An example of objColVals would be {name: panther, sleepy: true}
   updateOne: function(table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
 
@@ -80,6 +79,20 @@ var orm = {
     queryString += condition;
 
     console.log(queryString);
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+
+      cb(result);
+    });
+  },
+
+  delete: function(table, condition, cb) {
+    var queryString = "DELETE FROM " + table;
+    queryString += " WHERE ";
+    queryString += condition;
+
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;

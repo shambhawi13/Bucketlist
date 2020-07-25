@@ -1,3 +1,7 @@
 .bgImg{
-    background-image: url(../images/bl-1.jpg);
+    background-image: url(../images/bl3.png);
+}
+
+body{
+    font-family: 'Recursive', sans-serif;
 }
